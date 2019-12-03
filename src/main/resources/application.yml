@@ -1,0 +1,27 @@
+server:
+  port: 8889
+mybatis:
+  type-aliases-package: com.sys.log.domain
+  mapper-locations: classpath:mapper/*.xml
+
+spring:
+  application:
+    name: hystory-server
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///renren_security?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 0
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+logging:
+  level:
+    com.sys.log.mapper: DEBUG
