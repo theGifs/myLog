@@ -3,7 +3,6 @@ server:
 mybatis:
   type-aliases-package: com.sys.log.domain
   mapper-locations: classpath:mapper/*.xml
-
 spring:
   application:
     name: hystory-server
@@ -22,6 +21,9 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
+  freemarker:
+    suffix: .ftl
+    template-loader-path: classpath:/templates/
 logging:
   level:
     com.sys.log.mapper: DEBUG
