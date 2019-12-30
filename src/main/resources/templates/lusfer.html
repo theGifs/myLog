@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.bootcss.com/wangEditor/10.0.13/wangEditor.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/wangEditor/10.0.13/wangEditor.min.js"></script>
+    <title>lusfer</title>
+</head>
+<body>
+        <h1>lusgfer</h1>
+<div>
+    <div id="editor"></div>
+    <hr>
+    <button id="btn2">获取text</button>
+</div>
+</body>
+<script>
+    var E = window.wangEditor;
+    var editor = new E('#editor');
+    editor.create();
+
+
+    //获取文本输入的内容
+    document.getElementById('btn2').addEventListener('click', function () {
+        editor.txt.html(content);
+        var content = editor.txt.html();
+        console.log(content);
+        // 读取 text
+        alert(editor.txt.html());
+        var announcement_mag = editor.txt.text();
+        alert(announcement_mag)
+        /*$.ajax({
+            url : "http://localhost:8080/User/inserAnnouncements?announcement_mag="+announcement_mag,
+            type : "post",
+            dataType : "json",
+            success : function(data) {
+                alert(data.result);
+
+            },
+            error : function(msg) {
+                alert("ajax连接异常：" + msg);
+            }
+        });*/
+
+    }, false)
+
+</script>
+</html>
